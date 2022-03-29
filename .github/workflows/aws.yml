@@ -54,6 +54,6 @@ jobs:
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG ./UI
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY1:$IMAGE_TAG1 ./UI/client/witty
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY1:$IMAGE_TAG
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY1:$IMAGE_TAG1
         
         
