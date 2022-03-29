@@ -11,6 +11,6 @@ COPY . .
 
 # Stage 2
 # nginx state for serving content
-FROM nginx:alpine
-WORKDIR /usr/share/nginx/html/
-RUN rm -rf ./*
+#FROM nginx:alpine
+#WORKDIR /usr/share/nginx/html/
+#RUN rm -rf ./*
