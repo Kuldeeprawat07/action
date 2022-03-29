@@ -43,13 +43,13 @@ jobs:
     - name: Extract Git Tag
       run: echo "GIT_TAG=${GITHUB_REF_NAME##*/}-${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV
     - name: Extract Git Tag for new admin
-      run: echo "GIT_TAG1=${GITHUB_REF_NAME##*/}-${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV1
+      run: echo "GIT_TAG1=${GITHUB_REF_NAME##*/}-${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV
       
     - name: Build, tag, and push image to Amazon ECR
       env:
          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
          IMAGE_TAG: ${{ env.GIT_TAG }}
-         IMAGE_TAG1: ${{ env.GIT_TAG1 }}
+         IMAGE_TAG1: ${{ env.GIT_TAG }}
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG ./UI
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
